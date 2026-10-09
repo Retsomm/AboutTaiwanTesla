@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T05:48:42.842938+00:00",
+  "generatedAt": "2026-10-09T07:19:58.133111+00:00",
   "scope": "臺灣小客車每月新領牌（自用＋營業）",
   "registrations": {
     "status": "unavailable",
     "fetchedAt": null,
-    "attemptedAt": "2026-10-09T04:52:54.569177+00:00",
+    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
     "rows": [],
     "sha256": null,
     "downloadUrl": null,
@@ -16,18 +16,18 @@
   "market": {
     "status": "unavailable",
     "fetchedAt": null,
-    "attemptedAt": "2026-10-09T04:52:54.569177+00:00",
+    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
     "rows": [],
     "sha256": null,
     "downloadUrl": null,
-    "error": "缺少統計期或小客車欄位",
+    "error": "缺少完整月份",
     "source": "交通部公路局｜新車領牌數",
     "sourceUrl": "https://data.gov.tw/dataset/30202"
   },
   "charging": {
-    "status": "ok",
+    "status": "stale",
     "fetchedAt": "2026-10-09T05:48:42.842938+00:00",
-    "attemptedAt": "2026-10-09T05:48:42.842938+00:00",
+    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
     "rows": [
       {
         "id": "0058f7d6fbc93b3dbd36",
@@ -3600,7 +3600,7 @@
     ],
     "sha256": "1ba39c26dba52b016a0529a849dbcbb1cd1a1ef1b24eb54a1ca17e35c87b6c70",
     "downloadUrl": "https://tdx.transportdata.tw/api/basic/v1/EV/Station/City/Taichung?$format=JSON",
-    "error": null,
+    "error": "尚未設定 TDX API 金鑰",
     "source": "交通部 TDX｜綠色運輸－充電樁",
     "sourceUrl": "https://tdx.transportdata.tw/api-service/swagger/basic/b378d320-04a9-4fba-80b8-0df1b96dd5e8",
     "scope": "臺中市公開充電站（TDX 收錄範圍）"
@@ -3608,7 +3608,7 @@
   "news": {
     "status": "unavailable",
     "fetchedAt": null,
-    "attemptedAt": "2026-10-09T04:52:54.569177+00:00",
+    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
     "rows": [],
     "sha256": null,
     "downloadUrl": null,
