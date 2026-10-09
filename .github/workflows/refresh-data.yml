@@ -1,0 +1,57 @@
+name: Refresh official sources
+on:
+  push:
+    branches: [main]
+    paths: ['python/**', '.github/workflows/refresh-data.yml']
+  schedule:
+    - cron: '23 0 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: official-data-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify data transformations
+        run: PYTHONPATH=python python -m unittest discover -s python/tests -v
+      - name: Refresh validated snapshots
+        env:
+          TDX_CLIENT_ID: ${{ secrets.TDX_CLIENT_ID }}
+          TDX_CLIENT_SECRET: ${{ secrets.TDX_CLIENT_SECRET }}
+          TDX_STATIONS_URL: ${{ vars.TDX_STATIONS_URL }}
+          THB_MARKET_CSV_URL: ${{ vars.THB_MARKET_CSV_URL }}
+          THB_BRAND_CSV_URL: ${{ vars.THB_BRAND_CSV_URL }}
+          THB_NEWS_RSS_URL: ${{ vars.THB_NEWS_RSS_URL }}
+        run: PYTHONPATH=python python -m tesla_tw.application.refresh
+      - name: Save source revisions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/dashboard.json data/raw
+          git diff --cached --quiet || git commit -m "data: refresh official Taiwan sources"
+          git push
+      - name: Trigger linked Vercel deploy hook when configured
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          python - <<'PY'
+          import os
+          from urllib.request import Request, urlopen
+          from urllib.parse import urlparse
+          url = os.environ.get("VERCEL_DEPLOY_HOOK", "")
+          if url:
+              parsed = urlparse(url)
+              if parsed.scheme != "https" or parsed.hostname != "api.vercel.com" or not parsed.path.startswith("/v1/integrations/deploy/"):
+                  raise ValueError("Deploy hook must use Vercel official HTTPS endpoint")
+              with urlopen(Request(url, data=b"", method="POST"), timeout=30) as response:
+                  print("Vercel deploy hook accepted:", response.status)
+          else:
+              print("No deploy hook configured; snapshot committed, use linked Git deployments.")
+          PY

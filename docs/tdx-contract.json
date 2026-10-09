@@ -1,0 +1,69 @@
+{
+  "source": "https://tdx.transportdata.tw/webapi/File/Swagger/V3/b378d320-04a9-4fba-80b8-0df1b96dd5e8",
+  "verifiedAt": "2026-10-09",
+  "servers": [
+    {
+      "url": "https://tdx.transportdata.tw/api/basic"
+    }
+  ],
+  "stationResponse": {
+    "title": "StationList",
+    "required": [
+      "AuthorityCode",
+      "SrcUpdateInterval",
+      "SrcUpdateTime",
+      "Stations",
+      "UpdateInterval",
+      "UpdateTime"
+    ],
+    "type": "object",
+    "properties": {
+      "UpdateTime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "UpdateInterval": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "SrcUpdateTime": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "SrcUpdateInterval": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "AuthorityCode": {
+        "title": "String",
+        "minLength": 1,
+        "type": "string",
+        "description": "業管機關簡碼",
+        "xml": {
+          "name": "AuthorityCode"
+        }
+      },
+      "Stations": {
+        "title": "Array",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/PTX.Model.EV.POCO.Station"
+        },
+        "description": "資料(陣列)",
+        "xml": {
+          "name": "Stations"
+        }
+      },
+      "Count": {
+        "type": "integer",
+        "format": "int64",
+        "nullable": true
+      }
+    },
+    "additionalProperties": false,
+    "xml": {
+      "name": "EVWrapper`2OfStation",
+      "namespace": "https://ptx.transportdata.tw/standard/schema/"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-09T04:52:54.569177+00:00",
+  "scope": "臺灣小客車每月新領牌（自用＋營業）",
+  "registrations": {
+    "status": "unavailable",
+    "fetchedAt": null,
+    "attemptedAt": "2026-10-09T04:52:54.569177+00:00",
+    "rows": [],
+    "sha256": null,
+    "downloadUrl": null,
+    "error": "尚未取得公路局按廠牌分 CSV 下載端點",
+    "source": "交通部公路局｜機動車輛新車領牌數－按廠牌分",
+    "sourceUrl": "https://stat.thb.gov.tw/hb01/webMain.aspx?sys=210&funid=1120003&type=1&kind=21"
+  },
+  "market": {
+    "status": "unavailable",
+    "fetchedAt": null,
+    "attemptedAt": "2026-10-09T04:52:54.569177+00:00",
+    "rows": [],
+    "sha256": null,
+    "downloadUrl": null,
+    "error": "缺少統計期或小客車欄位",
+    "source": "交通部公路局｜新車領牌數",
+    "sourceUrl": "https://data.gov.tw/dataset/30202"
+  },
+  "charging": {
+    "status": "unavailable",
+    "fetchedAt": null,
+    "attemptedAt": "2026-10-09T04:52:54.569177+00:00",
+    "rows": [],
+    "sha256": null,
+    "downloadUrl": null,
+    "error": "尚未設定 TDX API 金鑰",
+    "source": "交通部 TDX｜綠色運輸－充電樁",
+    "sourceUrl": "https://tdx.transportdata.tw/api-service/swagger/basic/b378d320-04a9-4fba-80b8-0df1b96dd5e8",
+    "scope": "臺中市公開充電站（TDX 收錄範圍）"
+  },
+  "news": {
+    "status": "unavailable",
+    "fetchedAt": null,
+    "attemptedAt": "2026-10-09T04:52:54.569177+00:00",
+    "rows": [],
+    "sha256": null,
+    "downloadUrl": null,
+    "error": "公路局 RSS 頁面未提供可驗證的最新消息 feed",
+    "source": "交通部公路局｜新聞 RSS",
+    "sourceUrl": "https://www.thb.gov.tw/"
+  }
+}

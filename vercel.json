@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "buildCommand": "corepack yarn build",
+  "installCommand": "corepack yarn install --immutable",
+  "functions": {
+    "api/*.py": { "maxDuration": 30, "includeFiles": "public/data/**", "excludeFiles": "{node_modules/**,.next/**,python/tests/**,tests/**,data/raw/**}" }
+  }
+}
