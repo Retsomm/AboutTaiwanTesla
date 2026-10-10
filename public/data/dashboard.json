@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-09T07:19:58.133111+00:00",
+  "generatedAt": "2026-10-10T06:01:36.482434+00:00",
   "scope": "臺灣小客車每月新領牌（自用＋營業）",
   "registrations": {
     "status": "unavailable",
     "fetchedAt": null,
-    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
+    "attemptedAt": "2026-10-10T06:01:36.482434+00:00",
     "rows": [],
     "sha256": null,
     "downloadUrl": null,
@@ -16,7 +16,7 @@
   "market": {
     "status": "unavailable",
     "fetchedAt": null,
-    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
+    "attemptedAt": "2026-10-10T06:01:36.482434+00:00",
     "rows": [],
     "sha256": null,
     "downloadUrl": null,
@@ -27,7 +27,7 @@
   "charging": {
     "status": "stale",
     "fetchedAt": "2026-10-09T05:48:42.842938+00:00",
-    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
+    "attemptedAt": "2026-10-10T06:01:36.482434+00:00",
     "rows": [
       {
         "id": "0058f7d6fbc93b3dbd36",
@@ -3608,7 +3608,7 @@
   "news": {
     "status": "unavailable",
     "fetchedAt": null,
-    "attemptedAt": "2026-10-09T07:19:58.133111+00:00",
+    "attemptedAt": "2026-10-10T06:01:36.482434+00:00",
     "rows": [],
     "sha256": null,
     "downloadUrl": null,
